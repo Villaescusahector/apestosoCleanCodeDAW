@@ -6,34 +6,24 @@ import java.util.List;
 public class Clase1 {
     public String nombreClase;
     public int numeroPlazas = 5;
-    clase2[] asignatura = new clase2[numeroPlazas];
+    //numeroPlazas se tiene que llamar numeroMaxAsignatura
+    clase2[] asignatura = new clase2[numeroPlazas]; // DEBERIA DE SER UN ARRAYLIST DE CLASE2
 
-    Clase1(String n) {
+    Clase1(String n) { //¿DE DONDE VIENE N?
         nombreClase = n;
     }
-
+    //HABRIA QUE HACER UN ARRAYLIST DE ASIGNATURA
+    //AS COMO MAXIMO PUEDE TENER 5 ASIGNATURAS
     // añade asignatura si pasan cosas...
-    public void aniadirAsignaturra(clase2 as) throws Exception {
-        if (asignatura[0] != null) {
-            if (asignatura[1] != null) {
-                if (asignatura[2] != null) {
-                    if (asignatura[3] != null) {
-                        if (asignatura[4] != null) {
-                              throw new Exception("a");
-                        } else {
-                            asignatura[4] = as;
-                        }
-                    } else {
-                        asignatura[3] = as;
-                    }
-                } else {
-                    asignatura[2] = as;
-                }
-            } else {
-                asignatura[1] = as;
+
+
+    //NO ES ASIGNATURA ES CONTAR ASIGNATURA 
+    public void aniadirAsignaturra(clase3 as) throws Exception { // NO TIENE SENTIDO PASAR  CLASE2 AS HABRIA QUE PASAR ALGO RELLENADO
+        for (int i = 0; i < asignatura.length; i++) { //NO TIENE SENTIDO O NO LO ENTIENDO YO 
+            if(asignatura[i] == null) asignatura[i] = as;
+            else if(i == 4 && asignatura[i] != null){
+                throw new Exception("a");
             }
-        } else {
-            asignatura[0] = as;
         }
     }
 }
